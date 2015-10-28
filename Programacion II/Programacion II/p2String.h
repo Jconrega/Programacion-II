@@ -12,16 +12,17 @@ public:
 	p2String(const char* str);
 	//From C string
 	p2String(const p2String& str);
+	//Destructor
+	~p2String();
 	//Capacity
 	int Capacity()const;
 	//c_str() tronara la cadena com una cadena de c
-	const char* GetString();
+	const char* cstr();
 	//operador ==
 	bool operator==(const char*c)const;
 	//operador !=
 	bool operator!=(const char*c)const;
-	//Destructor
-	~p2String();
+	
 
 private:
 
