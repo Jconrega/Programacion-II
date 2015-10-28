@@ -29,7 +29,7 @@ p2String::p2String(const p2String& str)
 	strcpy_s(strng, capacity, str.strng);
 }
 
-int p2String::Capacity()const
+uint p2String::Capacity()const
 {
 	return capacity;
 }
@@ -55,4 +55,8 @@ bool p2String::operator!=(const char* c) const{
 const char* p2String::c_str()
 {
 
+}
+uint p2String::GetCapacity(const char* str)const
+{
+	return strlen(str);
 }

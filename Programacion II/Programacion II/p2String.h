@@ -15,7 +15,9 @@ public:
 	//Destructor
 	~p2String();
 	//Capacity
-	int Capacity()const;
+	uint Capacity()const;
+	//Trobem la capacitat
+	uint GetCapacity(const char* str)const;
 	//c_str() tronara la cadena com una cadena de c
 	const char* c_str();
 	//operador ==
