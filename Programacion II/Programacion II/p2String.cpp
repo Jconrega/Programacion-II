@@ -12,7 +12,8 @@ p2String::p2String()
 
 p2String::~p2String()
 {
-	delete[] strng;
+	if (strng!=NULL)
+		delete[] strng;
 }
 
 //no surt
