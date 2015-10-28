@@ -9,7 +9,7 @@ public:
 	//Constructor  buit
 	p2String();
 	//From C string
-	p2String(const char* str);
+	p2String(const char* strng_c);
 	//Constructor de copia
 	p2String(const p2String& str);
 	//Destructor
@@ -17,13 +17,17 @@ public:
 	//Capacity
 	uint Capacity()const;
 	//Trobem la capacitat
-	uint GetCapacity(const char* str)const;
+	uint GetCapacity(const char* strng_c)const;
 	//c_str() tronara la cadena com una cadena de c
-	const char* c_str();
-	//operador ==
-	bool operator==(const char*c)const;
-	//operador !=
-	bool operator!=(const char*c)const;
+	const char* c_str()const;
+	//operador == qaun reps cadena de c
+	bool operator==(const char*strng_c)const;
+	//operador == quan reps un p2String
+	bool operator==(const p2String& c)const;
+	//operador != quan repos una cadena de c
+	bool operator!=(const char*strng_c)const;
+	//operador != quan reps un p2String
+	bool operator!=(const p2String& c)const;
 	
 
 private:
@@ -32,6 +36,4 @@ private:
 	uint capacity;
 
 };
-
-
 #endif // !_P2STRING_H_

@@ -17,7 +17,7 @@ p2String::~p2String()
 }
 
 //no surt
-p2String::p2String(const char* str)
+p2String::p2String(const char* strng_c)
 {
 
 }
@@ -33,30 +33,47 @@ uint p2String::Capacity()const
 {
 	return capacity;
 }
-bool p2String::operator==(const char* c) const
+bool p2String::operator==(const char* strng_c) const
 {
-	if (strlen(c) != capacity - 1)
+	if (strlen(strng_c) != capacity - 1)
+		return false;
+	if (strcmp(strng, strng_c) != 0)
+		return false;
+
+	return true;
+}
+//Acabar
+bool p2String::operator==(const p2String& c) const
+{
+	if (c.GetCapacity()!= capacity - 1)
 		return false;
 	if (strcmp(strng, c) != 0)
 		return false;
 
 	return true;
 }
+bool p2String::operator!=(const char* strng_c) const{
+	if (strlen(strng_c) != capacity - 1)
+		return true;
+	if (strcmp(strng, strng_c) != 0)
+		return true;
 
-bool p2String::operator!=(const char* c) const{
-	if (strlen(c) != capacity - 1)
+	return false;
+}
+//Acabar
+bool p2String::operator!=(const p2String& c) const{
+	if (c.GetCapacity() != capacity - 1)
 		return true;
 	if (strcmp(strng, c) != 0)
 		return true;
 
 	return false;
 }
-//no surt
-const char* p2String::c_str()
+const char* p2String::c_str()const
 {
-
+	return strng;
 }
-uint p2String::GetCapacity(const char* str)const
+uint p2String::GetCapacity(const char* strng_c)const
 {
-	return strlen(str);
+	return strlen(strng_c);
 }
