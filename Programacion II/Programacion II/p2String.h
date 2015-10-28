@@ -12,6 +12,8 @@ public:
 	p2String(const char* strng_c);
 	//Constructor de copia
 	p2String(const p2String& str);
+	//Constructor copia memoria
+	p2String(uint memory);
 	//Destructor
 	~p2String();
 	//Capacity
@@ -29,6 +31,10 @@ public:
 	//operador != quan reps un p2String
 	bool operator!=(const p2String& c)const;
 	
+
+	//operadors d'asignacio
+	//mirem si necessitem memoria, sino no fem new
+	//si no cap hem de borrar la cadena anterior, al principi fem delete
 
 private:
 
