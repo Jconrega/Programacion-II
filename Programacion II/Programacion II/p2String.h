@@ -8,16 +8,16 @@ class p2String
 public:
 	//Constructor  buit
 	p2String();
-	//Constructor de copia
-	p2String(const char* str);
 	//From C string
+	p2String(const char* str);
+	//Constructor de copia
 	p2String(const p2String& str);
 	//Destructor
 	~p2String();
 	//Capacity
 	int Capacity()const;
 	//c_str() tronara la cadena com una cadena de c
-	const char* cstr();
+	const char* c_str();
 	//operador ==
 	bool operator==(const char*c)const;
 	//operador !=

@@ -51,7 +51,7 @@ bool p2String::operator!=(const char* c) const{
 	return false;
 }
 //no surt
-const char* p2String::cstr()
+const char* p2String::c_str()
 {
 
 }
