@@ -39,10 +39,14 @@ int main()
 
 	SWAP(punto1, punto2);
 
-	int a = 5;
 
-	printf("%d", a);
+	p2String a = "Hola";
+	char* b = "mundo";
+	a = a += b;
+	printf("%s",a.c_str() );
 
+
+	system("PAUSE");
 	return 0;
 }
 

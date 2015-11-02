@@ -15,11 +15,11 @@ public:
 
 
 	//Constructor
-	Point2D();
+	Point2D(){};
 
 
 	//Destructor
-	~Point2D();
+	~Point2D(){};
 
 	//Methods
 

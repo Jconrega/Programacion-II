@@ -38,7 +38,7 @@ p2String::p2String(uint memory)
 
 uint p2String::Capacity()const
 {
-	return capacity;
+	return strlen(strng);
 }
 
 bool p2String::operator==(const char* strng_c) const
@@ -88,16 +88,16 @@ const p2String& p2String::operator+=(const char* strng_c)
 	if (strng_c != NULL)
 	{
 		capacity = strlen(strng_c) + 1;
-		if (strlen(strng) < capacity)
+		
+		if (Capacity() < capacity)
 		{
 			char* tmp = strng;
-			strcpy_s(tmp, capacity + strlen(strng), strng);
 			delete[] strng;
-			strng = new char[strlen(strng) + capacity];
+			strng = new char[(Capacity() + capacity];
 		}
-		strcat_s(strng, capacity, strng_c);
+		strcat_s(strng, capacity + Capacity(), strng_c);
 	}
-	return strng;
+	return *this;
 }
 
 const p2String& p2String::operator+=(const p2String& str)
@@ -105,14 +105,13 @@ const p2String& p2String::operator+=(const p2String& str)
 	if (str != NULL)
 	{
 		capacity = strlen(str.c_str()) + 1;
-		if (strlen(strng) < capacity)
+		if (Capacity() < capacity)
 		{
 			char* tmp = strng;
-			strcpy_s(tmp, capacity + strlen(strng), strng);
 			delete[] strng;
-			strng = new char[strlen(strng) + capacity];
+			strng = new char[Capacity() + capacity];
 		}
-		strcat_s(strng, capacity, str.c_str());
+		strcat_s(strng, capacity + Capacity(), str.c_str());
 	}
-	return strng;
+	return *this;
 }
