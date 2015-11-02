@@ -99,3 +99,20 @@ const p2String& p2String::operator+=(const char* strng_c)
 	}
 	return strng;
 }
+
+const p2String& p2String::operator+=(const p2String& str)
+{
+	if (str != NULL)
+	{
+		capacity = strlen(str.c_str()) + 1;
+		if (strlen(strng) < capacity)
+		{
+			char* tmp = strng;
+			strcpy_s(tmp, capacity + strlen(strng), strng);
+			delete[] strng;
+			strng = new char[strlen(strng) + capacity];
+		}
+		strcat_s(strng, capacity, str.c_str());
+	}
+	return strng;
+}

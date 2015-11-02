@@ -32,6 +32,8 @@ public:
 	bool operator!=(const p2String& c)const;
 
 	const p2String& operator+=(const char* strng_c);
+
+	const p2String& operator+=(const p2String& str);
 	
 
 	//operadors d'asignacio
