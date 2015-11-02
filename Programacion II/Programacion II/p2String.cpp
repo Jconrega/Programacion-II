@@ -82,3 +82,20 @@ uint p2String::GetCapacity(const char* strng_c)const
 {
 	return strlen(strng_c);
 }
+
+const p2String& p2String::operator+=(const char* strng_c)
+{
+	if (strng_c != NULL)
+	{
+		capacity = strlen(strng_c) + 1;
+		if (strlen(strng) < capacity)
+		{
+			char* tmp = strng;
+			strcpy_s(tmp, capacity + strlen(strng), strng);
+			delete[] strng;
+			strng = new char[strlen(strng) + capacity];
+		}
+		strcat_s(strng, capacity, strng_c);
+	}
+	return strng;
+}

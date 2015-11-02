@@ -30,6 +30,8 @@ public:
 	bool operator!=(const char*strng_c)const;
 	//operador != quan reps un p2String
 	bool operator!=(const p2String& c)const;
+
+	const p2String& operator+=(const char* strng_c);
 	
 
 	//operadors d'asignacio
