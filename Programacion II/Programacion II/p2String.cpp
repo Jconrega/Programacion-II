@@ -85,7 +85,7 @@ uint p2String::GetCapacity(const char* strng_c)const
 
 const p2String& p2String::operator+=(const char* strng_c)
 {
-	if (strng_c != NULL)
+	if (strng_c != NULL) 
 	{
 		capacity = strlen(strng_c) + 1;
 		
