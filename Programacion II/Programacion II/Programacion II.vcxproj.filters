@@ -29,5 +29,11 @@
     <ClInclude Include="p2String.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DynArrayP2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

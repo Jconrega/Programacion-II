@@ -68,8 +68,10 @@
     <ClCompile Include="p2String.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DynArrayP2.h" />
     <ClInclude Include="p2String.h" />
     <ClInclude Include="Point2D.h" />
+    <ClInclude Include="Globals.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Point2D.h"
 #include "p2String.h"
+#include "Globals.h"
 
 
 
@@ -12,15 +13,6 @@ public:
 	int num;
 
 };
-
-template <class T>
-void SWAP(T& a, T& b)
-{
-	T temp;
-	temp = a;
-	a = b;
-	b = temp;
-}
 
 int main()
 {

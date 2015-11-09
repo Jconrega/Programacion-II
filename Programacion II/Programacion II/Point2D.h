@@ -2,6 +2,7 @@
 #define __Point2D_H__
 
 #include <math.h>
+#include "Globals.h"
 
 template <class Type>
 class Point2D
@@ -91,6 +92,5 @@ public:
 
 };
 
-typedef Point2D<int> iPoint;
-typedef Point2D<float> fPoint;
+
 #endif
