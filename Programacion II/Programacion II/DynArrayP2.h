@@ -34,7 +34,7 @@ public:
 	//afegeix un!! valor al final
 	void pushBack(const TYPE& unicData)
 	{
-		if (capacity <= numElements)
+		if (capacity <= numElements) 
 		{
 			TYPE* tmp = data;
 			data = new TYPE[capacity + BLOCK];
@@ -74,6 +74,16 @@ public:
 	//clear() important
 	//operador += con funciones que empicen por mem
 	//prefix 
+
+	//Nous deures
+
+
+	//fer operador[] corchetes
+	//fer operador =
+	//fer pop_back. Retorna l'ultim element i l'esborra
+	//Shrink_to_fid. Si sobra memoria l'hem d'esborrar
+	// Flip(). Invertir l'ordre
+	//Insert(position, data) Inserta en la poscicio que dius
 };
 #endif
 
