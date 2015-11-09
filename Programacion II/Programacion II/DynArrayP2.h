@@ -3,34 +3,68 @@
 #include <stdio.h>
 #include "Globals.h"
 
+#define BLOCK 16
 
 template <class TYPE>
 class DynArray{
 
-	unsigned int capacity = 0;
-	unsigned numElements = 0;
+	uint capacity = 0;
+	uint numElements = 0;
 	TYPE* data = NULL;
 
 public:
 
-	DynArray() : capacity(BLOCK)	{ data = new TYPE[BLOCK] };
+	DynArray() : capacity(BLOCK)	{ data = new TYPE[capacity] };
 
 	DynArray(uint memory_reserve)
 	{
-
-	}
-	DynArray(const DynArray& Array) : numElements(Array.numElements){
-
-		capacity = MAX(BLOCK, Array.capacity);
+		capacity += memory_reserve;
 		data = new TYPE[capacity];
-		memcpy(data, Array.data, Array.numElements * sizeof(TYPE));
+	
+	}
+	DynArray(const DynArray& arr) : numElements(arr.numElements){
+
+		capacity = MAX(BLOCK, numElements);
+		data = new TYPE[capacity];
+		memcpy(data, arr.data, arr.numElements * sizeof(TYPE));
 	}
 
 	~DynArray(){ if (data != NULL) { delete[] data } };
 
-	void pushBack(const TYPE& unicData){
-
+	//afegeix un!! valor al final
+	void pushBack(const TYPE& unicData)
+	{
+		if (capacity <= numElements)
+		{
+			TYPE* tmp = data;
+			data = new TYPE[capacity + BLOCK];
+			memcpy(data, tmp, numElements*sizeof(TYPE));
+			delete[] tmp;
+			//creem sumant un block
+		}
+		//Posem a las poscicio que toca i indiquem el numero de elements que tenim
 		data[num_elements++] = unicData;
+	}
+	uint Capacity()const
+	{
+		return capacity;
+	}
+
+	//falten coses per fer
+	TYPE At(uint position) const
+	{
+		//falta comprobar si la poscició existeix
+		return data[position];
+	}
+
+	bool Empty() const
+	{
+		//Retorna true si es cumpleix
+		return (numElements == o);
+	}
+	void Clear()
+	{
+		numElements = 0;
 	}
 
 	//constructor(memory_reserve)
@@ -38,7 +72,11 @@ public:
 	//capacity()retorna capaacity
 	//size()retorna size
 	//clear() important
-	//empty() et retorna true si esta buida
-
+	//operador += con funciones que empicen por mem
+	//prefix 
 };
 #endif
+
+//const ()
+
+// ()const

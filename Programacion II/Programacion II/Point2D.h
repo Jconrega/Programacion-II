@@ -93,4 +93,7 @@ public:
 };
 
 
+typedef Point2D<int> iPoint;
+typedef Point2D<float> fPoint;
+
 #endif

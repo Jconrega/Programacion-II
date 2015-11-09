@@ -93,7 +93,7 @@ const p2String& p2String::operator+=(const char* strng_c)
 		{
 			char* tmp = strng;
 			delete[] strng;
-			strng = new char[(Capacity() + capacity];
+			strng = new char[Capacity() + capacity];
 		}
 		strcat_s(strng, capacity + Capacity(), strng_c);
 	}
