@@ -18,7 +18,7 @@ public:
 
 	DynArray(uint memory_reserve)
 	{
-		capacity += memory_reserve;
+		capacity = memory_reserve;
 		data = new TYPE[capacity];
 	
 	}
@@ -53,8 +53,12 @@ public:
 	//falten coses per fer
 	TYPE At(uint position) const
 	{
-		//falta comprobar si la poscició existeix
-		return data[position];
+		if (position <= numElements)
+		{
+			return data[position];
+		}
+		return NULL;
+		
 	}
 
 	bool Empty() const
@@ -67,26 +71,71 @@ public:
 		numElements = 0;
 	}
 
-	//constructor(memory_reserve)
-	//at() donam el que hi hagi en la posició que vulgui
-	//capacity()retorna capaacity
-	//size()retorna size
-	//clear() important
-	//operador += con funciones que empicen por mem
-	//prefix 
 
-	//Nous deures
+	TYPE popBack()
+	{
+		return data[--numElements];
+	}
+
+	void Flip()
+	{
+		TYPE* start = &data[0];
+		TYPE* end = &data[num_elements - 1];
+
+		while (start < end)
+			SWAP(*start++, *end--);
+	}
+	//falten coses
+	void Insert(const TYPE& element, uint position)
+	{
+		if (position == num_elements)
+		{
+			pushBack(element);
+			return true;
+		}
+
+		else if (num_elements + 1 > mem_capacity)
+		{
+			for (unsigned int i = num_elements; i > position; --i)
+			{
+				data[i] = data[i - 1];
+			}
+
+			data[position] = element;
+			++num_elements;
+		}
+	}
+	void Shrink_to_fit()
+	{
+		if (capacity > numElements)
+		{
+			TYPE* tmp = data;
+			data = new TYPE[numElements];
+			memcpy(data, tmp, numElements*sizeof(TYPE));
+			delete[] tmp;
+
+		}
+	}
+	TYPE operator [](uint position)const
+	{
+		if (position > numElements)
+			return NULL;
+		return data[position];
+	}
+
+	TYPE operator =(const TYPE& element)
+	{
+		for (int i = 0; i < numElements; i++)
+		{
+			element[i] = data[i]
+		}
+		return element;
+	}
 
 
-	//fer operador[] corchetes
 	//fer operador =
-	//fer pop_back. Retorna l'ultim element i l'esborra
-	//Shrink_to_fid. Si sobra memoria l'hem d'esborrar
-	// Flip(). Invertir l'ordre
-	//Insert(position, data) Inserta en la poscicio que dius
+
+	
 };
 #endif
 
-//const ()
-
-// ()const
