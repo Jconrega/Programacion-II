@@ -2,6 +2,7 @@
 #define __DYNARRAYP2__H__
 #include <stdio.h>
 #include "Globals.h"
+#include <assert.h>
 
 #define BLOCK 16
 
@@ -116,7 +117,13 @@ public:
 
 		}
 	}
-	TYPE operator [](uint position)const
+	const TYPE* operator [](uint position)const
+	{
+		if (position > numElements)
+			return NULL;
+		return data[position];
+	}
+	TYPE* operator [](uint position)
 	{
 		if (position > numElements)
 			return NULL;
@@ -131,11 +138,7 @@ public:
 		}
 		return element;
 	}
-
-
-	//fer operador =
-
-	
+		
 };
 #endif
 
