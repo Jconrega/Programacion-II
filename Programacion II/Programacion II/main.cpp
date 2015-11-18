@@ -2,6 +2,7 @@
 #include "Point2D.h"
 #include "p2String.h"
 #include "Globals.h"
+#include "p2List.h"
 
 
 
@@ -36,6 +37,15 @@ int main()
 	char* b = "mundo";
 	a = a += b;
 	printf("%s",a.c_str() );
+
+	p2List<int> lista;
+
+	lista.PushBack(1);
+	lista.PushBack(2);
+	lista.PushBack(3);
+
+	lista.Clear();
+
 
 
 	system("PAUSE");

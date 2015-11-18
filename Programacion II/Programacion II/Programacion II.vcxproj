@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynArrayP2.h" />
+    <ClInclude Include="p2List.h" />
     <ClInclude Include="p2String.h" />
     <ClInclude Include="Point2D.h" />
     <ClInclude Include="Globals.h" />
