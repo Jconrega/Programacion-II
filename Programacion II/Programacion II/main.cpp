@@ -3,6 +3,8 @@
 #include "p2String.h"
 #include "Globals.h"
 #include "p2List.h"
+#include "Stack.h"
+#include "Queue.h"
 
 
 

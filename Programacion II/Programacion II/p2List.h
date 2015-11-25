@@ -82,6 +82,28 @@ public:
 			new_node->prev = tmp;
 		}
 	}
+	bool PopBack(Type& ret)
+	{
+		if (start == NULL)
+			return false;
+		else
+		{
+			ret = GetLast()->data;
+			if (GetLast()->prev != NULL)
+			{
+				GetLast() = GetLast()->prev;
+				delete GetLast()->next;
+				GetLast()->next = NULL;
+			}
+			else
+			{
+				delete start;
+				start = GetLast() = NULL;
+			}
+
+			return true;
+		}
+	}
 	bool EmptyData()
 	{
 		node_list<Type>* tmp = start;
