@@ -12,6 +12,7 @@ class DynArray{
 	uint capacity = 0;
 	uint numElements = 0;
 	TYPE* data = NULL;
+	uint count_flip = 0; 
 
 public:
 
@@ -80,11 +81,13 @@ public:
 
 	void Flip()
 	{
+		
 		TYPE* start = &data[0];
 		TYPE* end = &data[num_elements - 1];
 
 		while (start < end)
 			SWAP(*start++, *end--);
+		count_flip  = 1;
 	}
 	//falten coses
 	void Insert(const TYPE& element, uint position)

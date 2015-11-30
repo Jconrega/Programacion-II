@@ -1,5 +1,5 @@
-#ifndef _QUEUE_H_
-#define _QUEUE_H_
+#ifndef _QUEUEDYN_H_
+#define _QUEUEDYN_H_
 
 #include "DynArrayP2.h"
 template<class Type>
@@ -12,12 +12,18 @@ public:
 
 	void Push(const Type& data)
 	{
+		if (arr.count_flip == 1)
+		{
+			arr.Flip();
+			arr.count_flip = 0;
+		}
 		arr.pushBack(data);
 	}
 	
 	void Pop()
 	{
-		arr.Flip();
+		if (arr.count_flip != 1)
+			arr.Flip();
 		arr.popBack();
 	}
 

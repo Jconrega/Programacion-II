@@ -73,8 +73,10 @@
     <ClInclude Include="p2String.h" />
     <ClInclude Include="Point2D.h" />
     <ClInclude Include="Globals.h" />
-    <ClInclude Include="Queue.h" />
-    <ClInclude Include="Stack.h" />
+    <ClInclude Include="QueueDyn.h" />
+    <ClInclude Include="QueueList.h" />
+    <ClInclude Include="StackDyn.h" />
+    <ClInclude Include="StackList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

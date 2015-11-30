@@ -1,5 +1,5 @@
-#ifndef _STACK_H_
-#define _STACK_H_
+#ifndef _STACKLIST_H_
+#define _STACKLIST_H_
 
 #include "p2List.h"
 
