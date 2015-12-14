@@ -10,6 +10,7 @@ struct node_list
 	node_list<Type>*	next = NULL;
 	node_list<Type>*	prev = NULL;
 	
+	node_list();
 	node_list(const Type& data) : data(data){}
 	//Es crea destructor per defecte
 };
